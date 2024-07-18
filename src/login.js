@@ -12,7 +12,7 @@ const Login =()=>{
            const response = await axios.post('http://localhost:3001/login',{username,password});
            setmessage(`login is successful ${response.data.token}`)
         }catch(error){
-           setmessage('failed login')
+          setmessage(error.response.data.error)
         }
     };
 return(
